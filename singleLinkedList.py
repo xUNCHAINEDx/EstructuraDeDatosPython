@@ -31,12 +31,25 @@ class Single_Linked_List:
             self.cola = nuevo_nodo
         self.tamaño += 1
 
+#Metodo Prepend
+    def prepend(self, valor):
+        #Agrega un elemento al principio de la SLL
+        nuevo_nodo = self._Nodo(valor)
+        if self.cabeza == None and self.cola == None:
+            self.cabeza = nuevo_nodo
+            self.cola = nuevo_nodo
+        else:
+            nuevo_nodo.nodo_siguiente = self.cabeza
+            self.cabeza = nuevo_nodo
+        self.tamaño += 1
 
 sll = Single_Linked_List()
+
 
 sll.append('A')
 sll.append('B')
 sll.append('C')
 sll.append('D')
+sll.prepend('Z')
 
 print(sll)
