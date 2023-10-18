@@ -42,6 +42,17 @@ class Single_Linked_List:
             nuevo_nodo.nodo_siguiente = self.cabeza
             self.cabeza = nuevo_nodo
         self.tamaño += 1
+#Eliminar primer elemento de la lista SHIFT
+    def shift(self):
+        #Saca el primer elemento de la linkedlist
+        if self.tamaño == 0:
+            self.cabeza = None
+            self.cola = None
+        else:
+            nodo_eliminado = self.cabeza
+            self.cabeza = nodo_eliminado.nodo_siguiente
+            nodo_eliminado.nodo_siguiente = None
+            return print(nodo_eliminado.valor)
 
 sll = Single_Linked_List()
 
@@ -51,5 +62,8 @@ sll.append('B')
 sll.append('C')
 sll.append('D')
 sll.prepend('Z')
+
+sll.shift()
+sll.shift()
 
 print(sll)
