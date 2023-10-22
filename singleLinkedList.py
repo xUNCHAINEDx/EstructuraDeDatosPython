@@ -53,6 +53,23 @@ class Single_Linked_List:
             self.cabeza = nodo_eliminado.nodo_siguiente
             nodo_eliminado.nodo_siguiente = None
             return print(nodo_eliminado.valor)
+#Eliminar el ultimo elemetno de la SLL
+    def pop(self):
+        #Saca el ultimo elemento de la SLL
+        if self.tamaño == 0:
+            self.cabeza = None
+            self.cola = None
+        else:
+            nodo_actual = self.cabeza
+            nueva_cola = nodo_actual
+            while nodo_actual.nodo_siguiente != None:
+                nueva_cola = nodo_actual
+                nodo_actual = nodo_actual.nodo_siguiente
+            self.cola = nueva_cola
+            self.cola.nodo_siguiente = None
+            self.tamaño -= 1
+            return print(nodo_actual.valor)
+        
 
 sll = Single_Linked_List()
 
@@ -61,9 +78,10 @@ sll.append('A')
 sll.append('B')
 sll.append('C')
 sll.append('D')
-sll.prepend('Z')
+#sll.prepend('Z')
 
-sll.shift()
-sll.shift()
-
+#sll.shift()
+#sll.shift()
+sll.pop()
+sll.pop()
 print(sll)
