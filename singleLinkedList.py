@@ -70,6 +70,27 @@ class Single_Linked_List:
             self.tamaño -= 1
             return print(nodo_actual.valor)
         
+#Método get
+    def get(self, indice):
+        # Obtiene un nodo dado un indice
+        if indice == self.tamaño - 1:
+            print(self.cola.valor)
+            return self.cola
+        elif indice == 0:
+            print(self.cabeza.valor)
+            return self.cabeza
+        elif not (indice >= self.tamaño or indice < 0):
+            nodo_actual = self.cabeza
+            contador = 0
+            while contador != indice:
+                nodo_actual = nodo_actual.nodo_siguiente
+                contador += 1
+            print (nodo_actual.valor)
+            return nodo_actual
+        else:
+            return None
+        
+        
 
 sll = Single_Linked_List()
 
@@ -78,10 +99,11 @@ sll.append('A')
 sll.append('B')
 sll.append('C')
 sll.append('D')
-#sll.prepend('Z')
+
+sll.get(3)
 
 #sll.shift()
 #sll.shift()
-sll.pop()
-sll.pop()
+# sll.pop()
+# sll.pop()
 print(sll)
